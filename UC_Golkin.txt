@@ -1,0 +1,24 @@
+@startuml
+skinparam packageStyle rectangle
+
+actor User
+
+User -right- (Search for \n parnter)
+User -left- (Update \n profile)
+(Update \n profile) -up-> (Set wished\n skills): include
+(Update \n profile) -up-> (Change\n avatar): include
+rectangle "Statistics subsystem"  {
+User -down- (Interact with\n other users)
+(Interact with\n other users) -down-> (Rate\n partner): include
+}
+(Interact with\n other users) -down-> (Add to\n friends list): include
+(Interact with\n other users) -down-> (Propose \n lesson): include
+(Propose \n lesson) ..> (Create \n topic): extend
+
+rectangle "Statistics subsystem" {
+User -up- (See statistics)
+(See statistics) -up-> (See trending \n topics): include
+(See statistics) -up-> (See simplies \n languages): include
+}
+
+@enduml

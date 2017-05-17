@@ -9,7 +9,7 @@ participant "Azure Web Job" as Azure
 activate Azure
 Azure -> Server: Lesson end request
 activate Server
-Server --> Azure: 200 OK
+Server --> Azure: Done
 deactivate Azure
 Server -> Database: Change lesson state to "Finished"
 activate Database
