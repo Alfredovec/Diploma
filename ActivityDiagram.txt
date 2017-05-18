@@ -1,0 +1,25 @@
+@startuml
+start
+: Press "Partners";
+while (Is there something you can search for?) is (yes)
+  :Configure search parameters;
+  :Press search button;
+  if (Found what you searched for?) then (yes)
+    : Click on user's profile link;
+    if (Is this person in your friends list?) then(yes)
+      : Configure lesson parameters;
+      : Send lesson propose;
+      : Wait until request is accepted;
+      stop;
+    else (no)
+      : Click "Add to friends";
+      : Wait until request is accepted;
+      stop;
+    endif
+  else (no)
+  endif
+
+endwhile(no)
+:Try search later;
+stop
+@enduml

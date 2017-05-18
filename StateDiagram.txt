@@ -1,0 +1,19 @@
+@startuml
+
+[*] --> Proposed
+Proposed --> Denied
+Denied --> [*]
+Proposed --> Scheduled
+Proposed --> Outdated
+Outdated --> [*]
+Scheduled --> Cancelled
+Cancelled --> [*]
+Scheduled --> Active
+Scheduled --> Frustrated
+Active --> Finished
+Active --> Aborted
+Aborted --> [*]
+Finished --> [*]
+Frustrated --> [*]
+
+@enduml
