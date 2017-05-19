@@ -1,0 +1,14 @@
+@startuml
+start
+: Click on user's profile link in search results;
+    if (Is this person in your friends list?) then(yes)
+      : Configure lesson parameters;
+      : Send lesson propose;
+      : Wait until request is accepted;
+    else (no)
+      : Click "Add to friends";
+      : Wait until request is accepted;
+    endif
+
+stop
+@enduml

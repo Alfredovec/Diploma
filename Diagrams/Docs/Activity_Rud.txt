@@ -1,0 +1,15 @@
+@startuml
+start
+: Press "Partners";
+while (Is there something you can search for?) is (yes)
+  :Configure search parameters;
+  :Press search button;
+  if (Found what you searched for?) then (yes)
+  stop;
+  else (no)
+  endif
+
+endwhile(no)
+:Try search later;
+stop
+@enduml

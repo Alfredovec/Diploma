@@ -1,0 +1,94 @@
+@startuml
+
+class Rate {
+  ..
+  .. Fields ..
+  ..
+  -int Id
+  -int LessonId
+  -int FromUserId
+  -int ToUserId
+  -int Value
+  __
+  ..
+  .. Getting methods ..
+  ..
+  +int get_Id()
+  +int get_LessonId()
+  +int get_FromUserId()
+  +int get_ToUserId()
+  +int get_Value()
+  ..
+  .. Seting methods ..
+  ..
+  +void set_Id(int value)
+  +void set_LessonId(int value)
+  +void set_FromUserId(int value)
+  +void set_ToUserId(int value)
+  +void set_Value(int value)
+}
+
+class User {
+-int Id
+-string Name
+-string Surname
+-string AvatarUrl
+__
+..
+.. Getting methods ..
+..
++int get_Id()
++string get_Name()
++string get_Surname()
++string get_AvatarUrl()  
+..
+.. Seting methods ..
+..
++void set_Id(int value)
++void set_Name(string value)
++void set_Surname(string value)
++void set_AvatarUrl(string value)
+}
+
+class Lesson {
+-int Id
+-DateTimeOffset StartDateTime
+-int Duration
+-int UserMasterId
+-int UserApprenticeId
+-int TopicId
+-int LanguageId
+-string RoomId
+__
+..
+.. Getting methods ..
+..
++int get_Id()
++DateTimeOffset get_StartDateTime()
++int get_Duration()
++int get_UserMaserId()
++int get_UserApprenticeId()
++int get_TopicId()
++int get_LanguageId()
++string get_RoomId()  
+..
+.. Seting methods ..
+..
++void set_Id(int value)
++void set_StartDateTime(DateTimeOffset value)
++void set_Duration(int value)
++void set_UserMaserId(int value)
++void set_UserApprenticeId(int value)
++void set_TopicId(int value)
++void set_LanguageId(int value)
++void set_RoomId(string value)  
+}
+
+User "1" *-- "*" Rate
+
+User "1" *-left- "*" Lesson
+
+Rate "0..1" -right-* "1" Lesson
+
+
+@enduml
